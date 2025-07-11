@@ -1,4 +1,4 @@
-name: indrapose-poc
+name: indrapose-webapp
 version: '1.0.1-ctrlx'
 base: core22
 summary: POC pour IHM nouvelle version indrapose

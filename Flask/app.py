@@ -78,7 +78,7 @@ if __name__ == '__main__':
   
 
     if "SNAP_DATA" in os.environ:
-        run_simple('unix://'+os.environ['SNAP_DATA']+'/package-run/sample-flask-webapp/example.sock', 0, app)
+        run_simple('unix://'+os.environ['SNAP_DATA']+'/package-run/indrapose-webapp/example.sock', 0, app)
         #app.run(host='0.0.0.0',debug = False, port=3125)
     else:
 
