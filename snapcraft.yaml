@@ -1,14 +1,17 @@
-name: sample-flask-webapp
+name: indrapose-poc
 version: '1.0.1-ctrlx'
 base: core22
-summary: Sample to have a full webapp architecture serving on flask
+summary: POC pour IHM nouvelle version indrapose
 description: |
-      todo
+      L'objectif de cette application est de vérifier la faisabilité de passer par une app SDK pour l'IHM pour la nouvelle version d'Indrapose. L'utilisateur génère un script G-code qui sera interprété par https://community.boschrexroth.com/ctrlx-automation-how-tos-qmglrz33/post/how-to-use-g-code-ui-on-ctrlx-core-ViG9UrH7C4zAZuk
+      Code source : https://github.com/Felix-73/CTRLX-SDK-APP-Indrapose-poc.git
 confinement: strict
 grade: stable
 architectures:
-  - build-on: amd64
-  - build-on: arm64
+  - build-on: [amd64, arm64]
+    build-for: [amd64]
+  - build-on: [amd64, arm64]
+    build-for: [arm64]
 
     
 apps:
@@ -26,7 +29,6 @@ apps:
     command: bin/desktop-launch
     plugs:
       - desktop  
-   
 
 parts:
 
@@ -70,6 +72,7 @@ slots:
       write:
         - $SNAP_DATA/package-run/${SNAPCRAFT_PROJECT_NAME}
 
+# pour générer le fichier dans app data
 plugs:
   active-solution:
     interface: content
